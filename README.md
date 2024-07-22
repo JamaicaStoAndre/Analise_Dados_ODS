@@ -1,88 +1,78 @@
-# Painel ODS - Visualização e Análise de Dados
+# Painel ODS
 
-## Introdução
-
-O Painel ODS é uma ferramenta interativa para visualização e análise de dados relacionados aos Objetivos de Desenvolvimento Sustentável (ODS) em diferentes municípios. Esta aplicação permite comparar indicadores entre municípios e analisar detalhadamente os dados ao longo dos anos, fornecendo insights valiosos para gestores públicos, pesquisadores e interessados em monitorar o progresso dos ODS.
+Este projeto consiste em uma aplicação para visualização de dados relacionados aos Objetivos de Desenvolvimento Sustentável (ODS) em municípios brasileiros. A aplicação permite a comparação de indicadores entre diferentes municípios e a análise detalhada de indicadores específicos para um município.
 
 ## Estrutura do Projeto
 
-O projeto é composto pelos seguintes arquivos principais:
+O projeto contém os seguintes arquivos principais:
 
-### `app.py`
+- `app.py`: Arquivo principal da aplicação. Contém a definição da interface do usuário utilizando Streamlit e a lógica para carregar e filtrar os dados.
+- `utils.py`: Contém funções utilitárias para carregar e processar os dados a partir de arquivos Excel.
+- `visualization.py`: Contém funções para gerar visualizações gráficas dos dados filtrados.
 
-Arquivo principal que executa a aplicação Streamlit. Ele configura a interface do usuário, carrega os dados e chama as funções de visualização dos gráficos.
+## Funcionalidades
 
-### `data_processing.py`
+A aplicação possui duas principais funcionalidades:
 
-Contém funções para carregar e processar os dados do Excel. Garante que os dados estejam no formato correto para serem utilizados pela aplicação.
+1. **Visualização Comparativa**:
+    - Permite selecionar múltiplos municípios e comparar indicadores específicos entre eles.
+    - Exibe os dados filtrados em uma tabela e um gráfico comparativo.
 
-### `visualization.py`
+2. **Análise Detalhada**:
+    - Permite selecionar um único município e visualizar a evolução de indicadores específicos ao longo do tempo.
+    - Exibe os dados filtrados em uma tabela e um gráfico de linha mostrando a evolução dos indicadores.
 
-Inclui as funções responsáveis por gerar os gráficos de comparação e análise detalhada. Utiliza Plotly para criar gráficos interativos.
+## Importância dos Dados
 
-### `requirements.txt`
-
-Lista de dependências necessárias para executar a aplicação. Inclui pacotes como pandas, streamlit e plotly.
+Os dados utilizados na aplicação são cruciais para monitorar e avaliar o progresso dos municípios brasileiros em relação aos Objetivos de Desenvolvimento Sustentável. A visualização desses dados permite identificar áreas que necessitam de melhorias e orientar políticas públicas para promover um desenvolvimento sustentável e inclusivo.
 
 ## Como Utilizar
 
 ### Pré-requisitos
 
-- Python 3.8 ou superior
+- Python 3.7 ou superior
 - Bibliotecas listadas em `requirements.txt`
 
 ### Instalação
 
-1. Clone o repositório:
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/painel-ods.git
+   cd painel-ods
 
-```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+2. Crie um ambiente virtual e instale as dependências:
+  python -m venv venv
+  source venv/bin/activate
+  pip install -r requirements.txt
 
-2. Crie um ambiente virtual e ative-o
-python -m venv venv
-source venv/bin/activate  # No Windows, use `venv\Scripts\activate`
+### Execução
+- Para executar a aplicação, utilize o comando:
+  streamlit run app.py
 
-3. Instale as dependências:
-pip install -r requirements.txt
+### Estrutura dos Arquivos
+## app.py:
 
-### Executando a Aplicação
-1. Coloque o arquivo de dados Excel (.xlsx) na raiz do projeto.
+- Define a interface do usuário com Streamlit.
+- Carrega os dados e permite ao usuário selecionar municípios e indicadores para visualização.
+- Chama funções de visualization.py para gerar gráficos.
 
-2. Execute o aplicativo Streamlit:
-streamlit run app.py
+## utils.py:
 
-3. Acesse a aplicação no seu navegador no endereço http://localhost:8501
+- Função load_data: Carrega os dados a partir de um arquivo Excel e os processa para uso na aplicação.
 
-### Uso da Interface
-1. Carregar Dados
-- Selecione o arquivo Excel com os dados.
+## visualization.py:
 
-## Visualização Comparativa
-- Escolha os municípios e os indicadores que deseja comparar.
-- Os gráficos serão gerados automaticamente mostrando a comparação dos indicadores selecionados entre os municípios.
-
-## Análise Detalhada
-- Selecione um município e os indicadores que deseja analisar ao longo do tempo.
-- O gráfico mostrará a evolução dos indicadores selecionados para o município escolhido.
-
-### Importância da Aplicação
-- O Painel ODS é uma ferramenta essencial para acompanhar o progresso dos Objetivos de Desenvolvimento Sustentável (ODS) em nível municipal. Com ele, é possível:
-
-## Identificar áreas que precisam de mais atenção e recursos.
-- Monitorar o desempenho de diferentes municípios ao longo do tempo.
-- Tomar decisões baseadas em dados para políticas públicas.
-- Aumentar a transparência e o acesso a informações críticas para o desenvolvimento sustentável.
+- Função generate_comparison_chart: Gera gráficos comparativos de indicadores entre municípios.
+- Função generate_detailed_analysis_chart: Gera gráficos de linha mostrando a evolução de indicadores para um município.
 
 ### Contribuição
-- Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests para adicionar funcionalidades, corrigir bugs ou melhorar a documentação.
+- Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e enviar pull requests.
 
 ### Licença
-- Este projeto está licenciado sob a MIT License.
+Este projeto está licenciado sob a licença MIT.
 
-### Desenvolvido por João Maykon Mendes Ferreira
+### Desenvolvido por
+- João Maykon Mendes Ferreira.
 
-
-Este arquivo `README.md` fornece uma visão geral completa do projeto, incluindo a estrutura dos arquivos, instruções de instalação e uso, além de destacar a importância da aplicação. Sinta-se à vontade para personalizar conforme necessário!
 
 
